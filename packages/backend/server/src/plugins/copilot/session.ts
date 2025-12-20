@@ -437,6 +437,12 @@ export class ChatSessionService {
   }
 
   async getQuota(userId: string) {
+    // In selfhosted mode, skip quota check entirely - users provide their own API keys
+    if (env.selfhosted) {
+      const used = await this.models.copilotSession.countUserMessages(userId);
+      return { limit: undefined, used };
+    }
+
     const isCopilotUser = await this.models.userFeature.has(
       userId,
       'unlimited_copilot'

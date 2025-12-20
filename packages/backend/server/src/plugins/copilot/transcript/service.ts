@@ -52,10 +52,10 @@ export class CopilotTranscriptionService {
 
   private async getModel(userId: string) {
     const prompt = await this.prompt.get('Transcript audio');
-    const hasAccess = await this.models.userFeature.has(
-      userId,
-      'unlimited_copilot'
-    );
+    // Selfhosted users always get pro model access (they provide their own API keys)
+    const hasAccess =
+      env.selfhosted ||
+      (await this.models.userFeature.has(userId, 'unlimited_copilot'));
     // choose the pro model if user has copilot plan
     return prompt?.optionalModels[hasAccess ? 1 : 0];
   }
