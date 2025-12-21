@@ -2094,7 +2094,7 @@ Below is the user's query. Please respond in the user's preferred language witho
       'codeArtifact',
       'blobRead',
     ],
-    proModels: ['gemini-2.5-pro', 'claude-sonnet-4-5@20250929'],
+    proModels: [],
   },
 };
 
