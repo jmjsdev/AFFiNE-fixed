@@ -29,8 +29,8 @@ export type MenuSubMenuData = {
   closeOnSelect?: boolean;
 };
 export const subMenuOffset = offset({
-  mainAxis: 16,
-  crossAxis: 0,
+  mainAxis: 0,
+  crossAxis: -15,
 });
 export const subMenuPlacements = autoPlacement({
   allowedPlacements: ['bottom-end'],
