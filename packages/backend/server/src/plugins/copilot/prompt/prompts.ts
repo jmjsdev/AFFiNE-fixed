@@ -1930,10 +1930,19 @@ Now apply the \`updates\` to the \`content\`, following the intent in \`op\`, an
 ];
 
 const CHAT_PROMPT: Omit<Prompt, 'name'> = {
-  model: 'gemini-2.5-flash',
+  model: 'gpt-4o',
   optionalModels: [
-    'gemini-2.5-flash',
+    // OpenAI
+    'gpt-5',
+    'gpt-5-mini',
+    'gpt-4.1',
+    'gpt-4.1-mini',
+    'gpt-4o',
+    'gpt-4o-mini',
+    // Google
     'gemini-2.5-pro',
+    'gemini-2.5-flash',
+    // Anthropic
     'claude-sonnet-4-5@20250929',
   ],
   messages: [
