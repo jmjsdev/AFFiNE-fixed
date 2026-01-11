@@ -5,9 +5,6 @@ on:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+-canary.*'
 
-  schedule:
-    - cron: '0 9 * * *'
-
   workflow_dispatch:
     inputs:
       web:
